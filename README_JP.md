@@ -20,7 +20,7 @@ https://github.com/adam-maj/tiny-gpu
 
 ## Block図
 - 全体ブロック図 <br>
-![サンプル画像](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/eduFPGA_GPU.jpg?raw=true)
+![全体ブロック図](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/eduFPGA_GPU.jpg?raw=true)
 
 ## 設計済み成果物
 - GPUの設計データ（Verilog）
@@ -32,11 +32,12 @@ https://github.com/adam-maj/tiny-gpu
 
 ## デモ動作結果
 - 文字画像認識結果 <br>
-![サンプル画像](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/GPU_demo.jpg?raw=true)
+![文字画像認識結果](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/GPU_demo.jpg?raw=true)
 
 ## デモボード
 - 今後の使用予定は無くなったのですが、FPGAを搭載可能な基板を設計しました。
 - kiCADで設計しています。
+![デモボード](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/FPGA_board.jpg?raw=true)
 
 ## 未解決の課題
 - ラズパイ5起動時のFPGAのPCIE IPの認識問題。

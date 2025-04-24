@@ -24,6 +24,8 @@ EduFPGA-RP5GPU はラズベリーパイ5と接続して動作するGPUです。�
 - PCIE Write/Readプログラム（C++）
 
 ## デモ動作結果
+文字画像認識結果 <br>
+![サンプル画像](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/GPU_demo.jpg?raw=true)
 
 ## 未解決の課題
 

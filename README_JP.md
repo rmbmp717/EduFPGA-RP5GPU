@@ -12,6 +12,7 @@ PCIEドライバーを通してラズベリーパイ5と通信可能です。
 ## デモ動作環境
 - デモ動作環境
 - raspberry pi 5 + Tang Mega 138K + PCIE変換基板 <br>
+
 ![デモ動作環境](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/RP5_GPU.jpg?raw=true)
 
 ## GPU
@@ -19,15 +20,18 @@ PCIEドライバーを通してラズベリーパイ5と通信可能です。
 https://github.com/adam-maj/tiny-gpu
 - ISAは下図の通り、浮動小数点乗算命令を追加しました。
 - GPU ISA <br>
+
 ![GPU ISA](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/GPU_ISA.jpg?raw=true)
 
 ## Directories
 - FPGAで動作可能なGPUの設計データです。
+- FPGAで動作可能なPCIEコントローラーの設計データを含んでいます。
 - ラズパイ5でコンパイル可能なPCIEのドライバーコードです。
 - GPUを動作させるサンプルPythonスクリプトです。
 
 ## Block図
 - 全体ブロック図 <br>
+
 ![全体ブロック図](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/eduFPGA_GPU.jpg?raw=true)
 
 ## 設計済み成果物
@@ -40,12 +44,14 @@ https://github.com/adam-maj/tiny-gpu
 
 ## デモ動作結果
 - 文字画像認識結果 <br>
+
 ![文字画像認識結果](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/GPU_demo.jpg?raw=true)
 
 ## デモボード
 - tang consoleが発売されたので、今後の使用予定は無くなったのですが、FPGAを搭載可能な基板を設計しました。
 - kiCADで設計しています。
 - （配線要修正箇所があります）
+- 
 ![デモボード](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/FPGA_board.jpg?raw=true)
 
 ## 未解決の課題

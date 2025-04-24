@@ -2,9 +2,16 @@
 
 ## Introduction
 
-EduFPGA-RP5GPU はラズベリーパイ5と接続して動作するGPUです。設計データはFPGA上で動作し、PCIEドライバーを通してラズベリーパイ5と通信可能です。プロジェクトにはPCIEドライバーとサンプルPythonスクリプトを含んでいます。
+EduFPGA-RP5GPU はラズベリーパイ5と接続して動作する学習教育用GPUです。
+設計データはFPGA上で動作し、PCIEコントローラーを含んでいます。
+PCIEドライバーを通してラズベリーパイ5と通信可能です。
+プロジェクトにはラズパイ5で動作可能なPCIEドライバーとサンプルPythonスクリプトを含んでいます。
 
 ※なお、本プロジェクトは教育・実験目的で作成されています。実際の製品向け機能や高速化は今後の検討課題となります。
+
+## GPU
+この方のtiny-gpuを参考に設計しています。
+https://github.com/adam-maj/tiny-gpu
 
 ## Directories
 - FPGAで動作可能なGPUの設計データです。
@@ -12,7 +19,7 @@ EduFPGA-RP5GPU はラズベリーパイ5と接続して動作するGPUです。�
 - GPUを動作させるサンプルPythonスクリプトです。
 
 ## Block図
-全体ブロック図 <br>
+- 全体ブロック図 <br>
 ![サンプル画像](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/eduFPGA_GPU.jpg?raw=true)
 
 ## 設計済み成果物
@@ -24,11 +31,20 @@ EduFPGA-RP5GPU はラズベリーパイ5と接続して動作するGPUです。�
 - PCIE Write/Readプログラム（C++）
 
 ## デモ動作結果
-文字画像認識結果 <br>
+- 文字画像認識結果 <br>
 ![サンプル画像](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/GPU_demo.jpg?raw=true)
 
+## デモボード
+- 今後の使用予定は無くなったのですが、FPGAを搭載可能な基板を設計しました。
+- kiCADで設計しています。
+
 ## 未解決の課題
+- ラズパイ5起動時のFPGAのPCIE IPの認識問題。
+- DMA転送には未対応の課題。
 
 ## 今後の予定
+- 最小限動作確認の完成後に、札幌中小企業センターの方と相談した結果、このままでは「難しい」ということです。
+- デモボードの代わりとなるSipeedのFPGAボード（tang console）が中国通販から届き次第、今までの設計データを書き込んで、動作確認した後にプロジェクト終了とします。
 
 ## 所感
+- TBD

@@ -15,8 +15,11 @@ PCIEドライバーを通してラズベリーパイ5と通信可能です。
 ![デモ動作環境](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/RP5_GPU.jpg?raw=true)
 
 ## GPU
-この方のtiny-gpuを参考に設計しています。
+- この方のtiny-gpuを参考に設計しています。
 https://github.com/adam-maj/tiny-gpu
+- ISAは下図の通り、浮動小数点乗算命令を追加しました。
+- GPU ISA <br>
+![GPU ISA](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/GPU_ISA.jpg?raw=true)
 
 ## Directories
 - FPGAで動作可能なGPUの設計データです。

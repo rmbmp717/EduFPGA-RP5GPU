@@ -9,6 +9,10 @@ PCIEドライバーを通してラズベリーパイ5と通信可能です。
 
 ※なお、本プロジェクトは教育・実験目的で作成されています。実際の製品向け機能や高速化は今後の検討課題となります。
 
+## デモ動作環境
+- デモ動作環境 <br>
+![デモ動作環境](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/RP5_GPU.jpg?raw=true)
+
 ## GPU
 この方のtiny-gpuを参考に設計しています。
 https://github.com/adam-maj/tiny-gpu

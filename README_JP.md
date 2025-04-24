@@ -12,7 +12,7 @@ EduFPGA-RP5GPU はラズベリーパイ5と接続して動作するGPUです。�
 - GPUを動作させるサンプルPythonスクリプトです。
 
 ## Block図
-全体ブロック図
+全体ブロック図 <br>
 ![サンプル画像](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/eduFPGA_GPU.jpg?raw=true)
 
 ## 設計済み成果物

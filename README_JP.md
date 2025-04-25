@@ -53,7 +53,7 @@ https://github.com/adam-maj/tiny-gpu
 - tang consoleが発売されたので、今後の使用予定は無くなったのですが、FPGAサブ基板を搭載可能な基板を設計しました。
 - kiCADで設計しています。
 - （配線要修正箇所があります）
-- 
+
 ![デモボード](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/FPGA_board.jpg?raw=true)
 
 ## 未解決の課題

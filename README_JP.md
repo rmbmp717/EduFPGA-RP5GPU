@@ -36,6 +36,7 @@ https://github.com/adam-maj/tiny-gpu
 
 ## 設計済み成果物
 - GPUの設計データ（Verilog）
+- GPUデータ用メモリコントローラー（Verilog）
 - デモボード設計（KiCAD）
 - PCIEドライバー（C++）
 - FPGA側PCIEコントローラー（Verilog）
@@ -59,6 +60,7 @@ https://github.com/adam-maj/tiny-gpu
 ## 未解決の課題
 - ラズパイ5起動時のFPGAのPCIE IPの認識問題。
 - DMA転送には未対応の課題。
+- FPGAボード上のDDRメモリをGPUと同時に使用するまでは設計を作り込んでいない。
 
 ## 今後の予定
 - 最小限動作確認の完成後に、札幌中小企業センターの方と相談した結果、このままでは「ビジネス的には難しい」ということです。（最初から教育向けと説明しましたが）

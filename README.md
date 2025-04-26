@@ -2,59 +2,71 @@
 
 ## Introduction
 
-EduFPGA-RP5GPU is an educational GPU that operates in conjunction with a Raspberry Pi 5. The design runs on an FPGA and includes a PCIe controller. Communication with the Raspberry Pi 5 is handled via a PCIe driver. The project includes a PCIe driver that can be built on the Pi 5 and sample Python scripts to drive the GPU.
+EduFPGA-RP5GPU is an educational GPU designed to operate in conjunction with the Raspberry Pi 5.  
+The design data runs on the FPGA and includes a PCIe controller.  
+It can communicate with the Raspberry Pi 5 through a PCIe driver.  
+The project includes a PCIe driver that can be compiled on the Raspberry Pi 5 and sample Python scripts.
 
-> **Note:** This project was created for educational and experimental purposes. Production-grade features and performance optimizations are subjects for future consideration.
+*Note: This project is created for educational and experimental purposes. Functions for actual product use and performance enhancements will be considered in the future.*
 
 ## Demo Environment
-- Hardware setup:
-  Raspberry Pi 5 + Tang Mega 138K + PCIe adapter board  
-  ![Demo setup](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/RP5_GPU.jpg?raw=true)
+- Demo Environment
+- Raspberry Pi 5 + Tang Mega 138K + PCIe conversion board <br>
+
+![Demo Environment](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/RP5_GPU.jpg?raw=true)
 
 ## GPU
-- Designed with reference to Adam Maj’s [tiny-gpu](https://github.com/adam-maj/tiny-gpu).  
-- The ISA has been extended to include a floating-point multiply instruction.  
-- **GPU ISA**  
-  ![GPU ISA](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/GPU_ISA.jpg?raw=true)
+- Designed with reference to the following tiny-gpu project:  
+https://github.com/adam-maj/tiny-gpu
+- The ISA has been extended by adding floating-point multiplication instructions.
+- GPU ISA <br>
+
+![GPU ISA](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/GPU_ISA.jpg?raw=true)
 
 ## Directories
-- Verilog source for the FPGA-runnable GPU design  
-- Verilog source for the FPGA-side PCIe controller  
-- C++ source for the PCIe driver (builds on Raspberry Pi 5)  
-- Sample Python scripts to drive the GPU
+- Design data for the GPU that operates on FPGA.
+- Design data for the PCIe controller that operates on FPGA.
+- PCIe driver code that can be compiled on the Raspberry Pi 5.
+- Sample Python script to operate the GPU.
 
 ## Block Diagram
-- Overall system block diagram:  
-  ![Block diagram](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/eduFPGA_GPU.jpg?raw=true)
+- Overall Block Diagram <br>
+
+![Overall Block Diagram](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/eduFPGA_GPU.jpg?raw=true)
 
 ## Completed Deliverables
-- Verilog GPU design files  
-- Demo board schematics (KiCad)  
-- PCIe driver (C++)  
-- FPGA-side PCIe controller (Verilog)  
-- Python character-recognition demo program  
-- PCIe write/read test programs (C++)
+- GPU design data (Verilog)
+- Memory controller for GPU data (Verilog)
+- Demo board design (KiCAD)
+- PCIe driver (C++)
+- FPGA-side PCIe controller (Verilog)
+- Python program for character image recognition demo
+- PCIe Write/Read program (C++)
 
 ## Demo Results
-- Ran a character-recognition program on the Raspberry Pi 5.  
-- Transferred data to the GPU over PCIe and executed deep-learning inference.  
-- **Character-recognition output:**  
-  ![Recognition result](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/GPU_demo.jpg?raw=true)
+- Executed character recognition code on the Raspberry Pi 5.
+- Data was transferred to the GPU via PCIe, and deep learning computation was executed.
+- Character Image Recognition Result <br>
+
+![Character Image Recognition Result](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/GPU_demo.jpg?raw=true)
 
 ## Demo Board
-- Although Sipeed’s “tang console” is now available (making our custom sub-board less necessary), we designed an FPGA daughter board in KiCad to fit under that form factor.  
-- **Status:** Some wiring modifications are still required.  
-  ![Demo board](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/FPGA_board.jpg?raw=true)
+- Although the plan to use this demo board was discontinued after the release of the Tang Console, a board capable of mounting an FPGA sub-board was designed.
+- Designed using KiCAD.
+- (There are wiring correction points that need to be fixed.)
+
+![Demo Board](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/FPGA_board.jpg?raw=true)
 
 ## Unresolved Issues
-- FPGA PCIe IP is not always recognized at Raspberry Pi 5 boot.  
-- DMA transfers are not yet supported.
+- PCIe IP recognition issue at Raspberry Pi 5 boot.
+- DMA transfer is not yet supported.
+- The design has not been developed to the point of using DDR memory on the FPGA board concurrently with the GPU.
 
 ## Future Plans
-- After verifying minimal functionality, we consulted with the Sapporo Small & Medium Enterprise Support Center. Their feedback: “As is, commercializing this will be difficult.” (We noted from the start that this is for educational use.)  
-- Once the tang console board arrives from China, we will program it with our design, verify operation, and then conclude the project.
+- After completing minimum operation confirmation, I consulted with representatives at the Sapporo Small Business Center and concluded that "it would be difficult to commercialize" (although I had explained from the beginning that it was for educational purposes).
+- Once the Sipeed FPGA board (Tang Console) arrives from a Chinese supplier, I will write the current design data to it, verify operation, and then conclude the project.
 
-## Reflections
-- I’ve consolidated my notes and design data here.  
-- Design period: two and a half months.  
-- It’s easy to forget details from a year ago, so keeping this record was important.
+## Personal Reflection
+- I have compiled past Note articles and design data.
+- The total design period was about two and a half months.
+- If I don't summarize things from a year ago, I tend to forget them.

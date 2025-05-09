@@ -1,0 +1,13 @@
+[General]
+ipc_version=4
+file=gowin_ram16s
+module=Gowin_RAM16S
+target_device=gw5ast138b-010
+type=ssram_ram16s
+version=1.0
+
+[Config]
+DEPTH=12800
+LANG=0
+MEM_FILE=../VIDEO_RAM.mi
+WIDTH=3

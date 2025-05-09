@@ -2,7 +2,7 @@
 FPGA GPU
 NISHIHARU
 */
-module EduGraphics_GPU #(
+module EduFPGA_GPU #(
 	parameter DATA_MEM_ADDR_BITS        = 12,
 	parameter DATA_MEM_DATA_BITS        = 16,
 	parameter DATA_MEM_NUM_CHANNELS     = 4,

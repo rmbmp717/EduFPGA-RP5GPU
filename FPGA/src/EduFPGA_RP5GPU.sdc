@@ -1,4 +1,4 @@
-//EduGraphics_GPU_FPGA
+//EduFPGA_GPU
 
 create_clock -name sys_clk -period 20 -waveform {0 10} [get_ports {clk}] -add
 

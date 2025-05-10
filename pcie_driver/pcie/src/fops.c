@@ -1,5 +1,5 @@
 /*
-EduGraphics_pcie_driver
+EduGPU_pcie_driver
 */
 
 #include <linux/version.h>
@@ -20,22 +20,22 @@ EduGraphics_pcie_driver
 
 #include "fops.h"
 
-// edugra_pcie_fops_openの実装
-int edugra_pcie_fops_open(struct inode *inode, struct file *filp)
+// edugpu_pcie_fops_openの実装
+int edugpu_pcie_fops_open(struct inode *inode, struct file *filp)
 {
-    printk("EduGra fp open\n");
+    printk("EduGPU fp open\n");
 
     int err = 0;
 
     u32 major = MAJOR(inode->i_rdev);
     u32 minor = MINOR(inode->i_rdev);
-    struct edugra_pcie_board *pBoard;
+    struct edugpu_pcie_board *pBoard;
 
     pr_debug(DRIVER_NAME ": (%d: %d-%d): fops_open\n", current->tgid, major, minor);
 
-    // allow multiple processes to open a device, count references in edugra_pcie_get_board_index.
-    if (!(pBoard = edugra_pcie_get_board_index(minor))) {
-        pr_err(DRIVER_NAME ": fops_open: PCIe board not found for /dev/hailoEduGraphics_pcie_driver%d node.\n", minor);
+    // allow multiple processes to open a device, count references in edugpu_pcie_get_board_index.
+    if (!(pBoard = edugpu_pcie_get_board_index(minor))) {
+        pr_err(DRIVER_NAME ": fops_open: PCIe board not found for /dev/EduGPU_pcie_driver%d node.\n", minor);
         err = -ENODEV;
     }
 
@@ -46,30 +46,30 @@ int edugra_pcie_fops_open(struct inode *inode, struct file *filp)
     return err;
 }
 
-// edugra_pcie_fops_readの実装
-ssize_t edugra_pcie_fops_read(struct file *filp, char __user *buf, size_t len, loff_t *offset)
+// edugpu_pcie_fops_readの実装
+ssize_t edugpu_pcie_fops_read(struct file *filp, char __user *buf, size_t len, loff_t *offset)
 {
-    struct edugra_pcie_board *pBoard = filp->private_data;
+    struct edugpu_pcie_board *pBoard = filp->private_data;
     void __iomem *bar2_addr;
     size_t bar2_size;
     size_t read_size;
     int err;
 
-    pr_info("EduGraphics_pcie_driver: Edugra read called\n");
+    pr_info("EduGPU_pcie_driver: EduGPU read called\n");
 
     // pBoardのNULLチェック
     if (!pBoard) {
-        pr_err("EduGraphics_pcie_driver: private_data is NULL\n");
+        pr_err("EduGPU_pcie_driver: private_data is NULL\n");
         return -ENODEV;
     }
 
     // BAR 2 (メインリソース)のアドレスとサイズを取得
-    bar2_addr = (void __iomem *)pBoard->pcie_resources.edugra_registers.address;
-    bar2_size = pBoard->pcie_resources.edugra_registers.size;
+    bar2_addr = (void __iomem *)pBoard->pcie_resources.edugpu_registers.address;
+    bar2_size = pBoard->pcie_resources.edugpu_registers.size;
 
     // BAR2のNULLチェック
     if (!bar2_addr) {
-        pr_err("EduGraphics_pcie_driver: BAR2 address is NULL\n");
+        pr_err("EduGPU_pcie_driver: BAR2 address is NULL\n");
         return -EFAULT;
     }
 
@@ -82,7 +82,7 @@ ssize_t edugra_pcie_fops_read(struct file *filp, char __user *buf, size_t len, l
     read_size = min(len, bar2_size - (size_t)*offset);
 
     // リードされたアドレスとサイズを表示
-    pr_info("EduGraphics_pcie_driver: Reading from BAR2 at address: 0x%p, offset: 0x%llx, size: %zu bytes\n", 
+    pr_info("EduGPU_pcie_driver: Reading from BAR2 at address: 0x%p, offset: 0x%llx, size: %zu bytes\n", 
             bar2_addr, *offset, read_size);
     
     // ユーザ空間にデータをコピー
@@ -98,9 +98,9 @@ ssize_t edugra_pcie_fops_read(struct file *filp, char __user *buf, size_t len, l
     return read_size;  // 読み取ったバイト数を返す
 }
 
-ssize_t edugra_pcie_fops_write(struct file *filp, const char __user *buf, size_t len, loff_t *ppos)
+ssize_t edugpu_pcie_fops_write(struct file *filp, const char __user *buf, size_t len, loff_t *ppos)
 {
-    struct edugra_pcie_board *pBoard = filp->private_data;
+    struct edugpu_pcie_board *pBoard = filp->private_data;
     void __iomem *bar2_addr;
     size_t bar2_size;
     size_t write_size;
@@ -109,17 +109,17 @@ ssize_t edugra_pcie_fops_write(struct file *filp, const char __user *buf, size_t
 
     // pBoardのNULLチェック
     if (!pBoard) {
-        pr_err("EduGraphics_pcie_driver: private_data is NULL\n");
+        pr_err("EduGPU_pcie_driver: private_data is NULL\n");
         return -ENODEV;
     }
 
     // BAR2のアドレスとサイズを取得
-    bar2_addr = (void __iomem *)pBoard->pcie_resources.edugra_registers.address;
-    bar2_size = pBoard->pcie_resources.edugra_registers.size;
+    bar2_addr = (void __iomem *)pBoard->pcie_resources.edugpu_registers.address;
+    bar2_size = pBoard->pcie_resources.edugpu_registers.size;
 
     // BAR2のNULLチェック
     if (!bar2_addr) {
-        pr_err("EduGraphics_pcie_driver: BAR2 address is NULL\n");
+        pr_err("EduGPU_pcie_driver: BAR2 address is NULL\n");
         return -EFAULT;
     }
 
@@ -135,7 +135,7 @@ ssize_t edugra_pcie_fops_write(struct file *filp, const char __user *buf, size_t
     write_size = min(len, (size_t)(bar2_size - offset));
 
     // 書き込まれるアドレスとサイズを表示
-    pr_info("EduGraphics_pcie_driver: Writing to BAR2 at address: 0x%p, offset: 0x%llx, size: %zu bytes\n",
+    pr_info("EduGPU_pcie_driver: Writing to BAR2 at address: 0x%p, offset: 0x%llx, size: %zu bytes\n",
             bar2_addr, offset, write_size);
 
     // ポインタ演算のためにキャスト
@@ -151,21 +151,21 @@ ssize_t edugra_pcie_fops_write(struct file *filp, const char __user *buf, size_t
     // ファイルポインタを更新
     filp->f_pos += write_size;
 
-    pr_info("EduGraphics_pcie_driver: Write operation successful\n");
+    pr_info("EduGPU_pcie_driver: Write operation successful\n");
 
     return write_size;  // 書き込んだバイト数を返す
 }
 
 
-int edugra_pcie_mmap(struct file *filp, struct vm_area_struct *vma)
+int edugpu_pcie_mmap(struct file *filp, struct vm_area_struct *vma)
 {
-    struct edugra_pcie_board *pBoard = filp->private_data;
+    struct edugpu_pcie_board *pBoard = filp->private_data;
     size_t size = vma->vm_end - vma->vm_start;
     unsigned long pfn;
     size_t resource_size;
 
     // リソースサイズの取得
-    resource_size = pBoard->pcie_resources.edugra_registers.size;
+    resource_size = pBoard->pcie_resources.edugpu_registers.size;
 
     // サイズのチェック
     if (size > resource_size) {
@@ -174,7 +174,7 @@ int edugra_pcie_mmap(struct file *filp, struct vm_area_struct *vma)
     }
 
     // ページフレーム番号（PFN）の取得
-    pfn = (pBoard->pcie_resources.edugra_registers.address) >> PAGE_SHIFT;
+    pfn = (pBoard->pcie_resources.edugpu_registers.address) >> PAGE_SHIFT;
 
     // メモリ領域をユーザ空間にマップ
     if (remap_pfn_range(vma, vma->vm_start, pfn, size, vma->vm_page_prot)) {
@@ -186,10 +186,10 @@ int edugra_pcie_mmap(struct file *filp, struct vm_area_struct *vma)
 }
 
 
-loff_t edugra_pcie_llseek(struct file *file, loff_t offset, int whence) {
+loff_t edugpu_pcie_llseek(struct file *file, loff_t offset, int whence) {
     loff_t new_pos = 0;
-    struct edugra_pcie_board *pBoard = file->private_data;
-    size_t bar2_size = pBoard->pcie_resources.edugra_registers.size;
+    struct edugpu_pcie_board *pBoard = file->private_data;
+    size_t bar2_size = pBoard->pcie_resources.edugpu_registers.size;
 
     switch (whence) {
         case SEEK_SET:

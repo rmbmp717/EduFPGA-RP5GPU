@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 //`define GPU_LESS
 
-module Eduphics_GPU_module  #(
+module EduGPU_GPU_module  #(
     parameter MEM_DATA_WIDTH = 32,
     parameter MEM_ADDR_WIDTH = 16
     ) (

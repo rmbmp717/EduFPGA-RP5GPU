@@ -15,9 +15,10 @@
 
 ### Command-line Input
 ```bash
-$make all
-$sudo make install_dkms
-$sudo modprobe EduGPU_pcie_driver
+$ cd ./pcie
+$ make all
+$ sudo make install_dkms
+$ sudo modprobe EduGPU_pcie_driver
 
 ```
 

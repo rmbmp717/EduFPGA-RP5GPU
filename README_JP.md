@@ -55,15 +55,13 @@ https://github.com/adam-maj/tiny-gpu
 ![文字画像認識結果](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/GPU_demo.jpg?raw=true)
 
 ## PCIE IP設定
+- PCIE IPのBAR設定は下記 <br>
 
 | BAR  | Enabled | Type    | 64 bit | Prefetchable | Size        | Value (Hex) |
 |------|---------|---------|--------|--------------|-------------|-------------|
 | Bar0 | Yes     | Memory  | Yes    | No           | 1 Kilobyte  | FFFFFC00    |
-| Bar1 | No      | Memory  | -      | -            | 2 Kilobytes | -           |
 | Bar2 | Yes     | Memory  | Yes    | No           | 64 Kilobytes| FFFF0000    |
-| Bar3 | No      | Memory  | -      | -            | 2 Kilobytes | -           |
 | Bar4 | Yes     | Memory  | Yes    | No           | 2 Kilobytes | FFFFF800    |
-| Bar5 | No      | Memory  | -      | -            | 2 Kilobytes | -           |
 
 ## デモボード
 - tang consoleが発売されたので、今後の使用予定は無くなったのですが、FPGAサブ基板を搭載可能な基板を設計しました。

@@ -1,3 +1,43 @@
+/*
+============================================================
+Tiny-GPU Enhanced FPGA GPU Implementation
+------------------------------------------------------------
+This design is based on the open-source "tiny-GPU" architecture,
+with significant extensions and customizations:
+
+- Added support for floating-point 16-bit (FP16) multiplication
+  via the `fp16_multiply` function, enabling GPU cores to handle
+  floating-point arithmetic natively.
+
+- Modular design with support for multiple cores and multiple
+  threads per block. The architecture includes:
+    * Program memory and data memory controllers
+    * Core dispatch and scheduling system
+    * Instruction fetch, decode, execution pipeline
+    * Load-store units (LSUs) and arithmetic logic units (ALUs)
+    * Dedicated register file and program counter (PC) modules
+
+- Supports a simple GPU command set:
+    * Arithmetic (ADD, SUB, MUL, FMUL, DIV)
+    * Control flow (BRnzp, CMP, RET)
+    * Memory access (LDR, STR)
+    * Immediate loading (CONST)
+    * No-operation (NOP)
+
+- Multi-threaded core logic with configurable parameters:
+    * Number of cores (`NUM_CORES`)
+    * Threads per block (`THREADS_PER_BLOCK`)
+    * Memory width and address sizes for both program and data memories
+
+- Carefully designed rounding and normalization for FP16 operations
+  following IEEE 754 principles.
+
+This module set is designed for educational and experimental purposes,
+and can serve as a minimal, customizable GPU implementation on FPGA.
+
+Author: NISHIHARU
+============================================================
+*/
 `timescale 1ns/1ns
 `default_nettype none
 module gpu #(

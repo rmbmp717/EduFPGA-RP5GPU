@@ -9,5 +9,5 @@
 | Folder Name | Description                |
 |-------------|----------------------------|
 | archive     | Design archive files       |
-| impk        | Currently an empty folder  |
+| impl        | Currently an empty folder  |
 | src         | FPGA design source code    |

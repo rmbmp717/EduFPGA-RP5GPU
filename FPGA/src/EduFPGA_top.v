@@ -1,12 +1,21 @@
 /*
-FPGA TOP file
-NISHIHARU
+EduFPGA_GPU FPGA Top Module
+---------------------------------------------
+This is the top-level module for the EduGPU FPGA system,
+which integrates the following components:
+- PCIe interface and TLP packet decoder/encoder
+- EduGPU graphics processing module
+- LCD controller for display output
+- System clock and reset management
+
+Designed by NISHIHARU for educational and experimental purposes.
 */
+
 //`define RTLSIM
 //`define DUMPFILE
 //`define LCD_LESS
 
-module FPGA_top (
+module EduFPGA_top (
     input wire          clk,
     input wire          rst_n, 
     input wire          pcie_rstn,
@@ -195,8 +204,6 @@ SerDes_Top mSerDes_Top (
     .PCIE_Controller_Top_pcie_linkup_o          (pcie_linkup    ), 
     // 入力ポート
     .PCIE_Controller_Top_pcie_rstn_i            (pcie_rstn      ),
-    //.PCIE_Controller_Top_pcie_rstn_i            (sw_rstn & pcie_rstn),
-    //.PCIE_Controller_Top_pcie_rstn_i            (rst_n          ),
     .PCIE_Controller_Top_pcie_tl_clk_i          (tlp_clk        ), 
     .PCIE_Controller_Top_pcie_tl_rx_wait_i      (1'b0), 
     .PCIE_Controller_Top_pcie_tl_rx_masknp_i    (1'b0),
@@ -266,7 +273,7 @@ pcie_tlp_packet_enc mpcie_tlp_packet_enc(
 
 //##########################################################################################
 // EduGrapchics GPU
-Eduphics_GPU_module  #(
+EduFPGA_GPU_module  #(
     .MEM_DATA_WIDTH(32),
     .MEM_ADDR_WIDTH(16)
     ) mEduGPU_module(
@@ -298,7 +305,7 @@ assign LCD_SDA = (~LCD_SDA_Read)? LCD_SDA_out : 1'bz;
 
 wire [15:0] H_pos, V_pos;
 
-EduGraphics_LCD_Controller mLCD_Controller(
+EduFPGA_LCD_Controller mLCD_Controller(
     .clk_10MHz                      (clk_10MHz),            // システムクロック (10MHz)
     .rst_n                          (rst_n),                // アクティブローリセット
     .sw_rstn                        (sw_rstn),              // スイッチリセット信号（例）

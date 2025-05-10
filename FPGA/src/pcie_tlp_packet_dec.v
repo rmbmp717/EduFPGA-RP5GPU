@@ -1,5 +1,5 @@
 /*
-EduGraphics FPGA
+EduFPGA_GPU
 NISHIHARU
 */
 module pcie_tlp_packet_dec (

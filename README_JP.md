@@ -15,7 +15,8 @@ PCIEドライバーを通してラズベリーパイ5と通信可能です。
 
 ![デモ動作環境](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/RP5_GPU_ASM1182e.jpg?raw=true)
 
-- ASM1182e PCIEレピーター基板 <br>
+- ASM1182e PCIEレピーター基板
+- ASM1182e PCIEレピーター基板を使用しないとGowin FPGAのPCIE IPがRP5起動時に認識しません。<br>
 ![PCIEレピーター基板](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/ASM1182e.jpg?raw=true)
 
 ## GPU
@@ -61,7 +62,6 @@ https://github.com/adam-maj/tiny-gpu
 ![デモボード](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/FPGA_board.jpg?raw=true)
 
 ## 未解決の課題
-- ラズパイ5起動時のFPGAのPCIE IPの認識問題。
 - DMA転送には未対応の課題。
 - FPGAボード上のDDRメモリをGPUと同時に使用するまでは設計を作り込んでいない。
 

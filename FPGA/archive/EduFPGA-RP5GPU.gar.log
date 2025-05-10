@@ -1,0 +1,55 @@
+********* Archive Project on 2025-05-10 23:37:11 *********
+Tool Version: V1.9.9 (64-bit)
+Archive file: C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\EduFPGA-RP5GPU.gar
+Archive files successfully
+
+
+********* Archived files *********
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\EduFPGA-RP5GPU.gprj
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\EduFPGA-RP5GPU.gprj.user
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\impl\EduFPGA-RP5GPU_process_config.json
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\EduFPGA_GPU.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\EduFPGA_GPU_Memory.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\EduFPGA_GPU_module.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\EduFPGA_LCD_Controller.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\EduFPGA_RP5GPU.sdc
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\EduFPGA_project.cst
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\EduFPGA_top.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\VIDEO_RAM.mi
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\gowin_pll\gowin_pll.ipc
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\gowin_pll\gowin_pll.mod
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\gowin_pll\gowin_pll.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\gowin_pll\gowin_pll_tmp.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\gowin_ram16s\gowin_ram16s.ipc
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\gowin_ram16s\gowin_ram16s.mod
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\gowin_ram16s\gowin_ram16s.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\gowin_ram16s\gowin_ram16s_tmp.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\gpu.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\pcie_controller.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\pcie_controller_tmp.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\pcie_tlp_packet_dec.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\pcie_tlp_packet_enc.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\serdes\pcie_controller\pcie_controller.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\serdes\pcie_controller\pcie_controller.vo
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\serdes\pcie_controller\pcie_controller_tmp.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\serdes\pcie_controller\temp\pcie\define.vh
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\serdes\pcie_controller\temp\pcie\pcie.prj
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\serdes\pcie_controller\temp\pcie\pcie_configure.csr
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\serdes\pcie_controller\temp\pcie\pcie_controller.log
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\serdes\pcie_controller\temp\pcie\pcie_controller.vg
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\serdes\pcie_controller\temp\pcie\pcie_controller_syn.rpt.html
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\serdes\pcie_controller\temp\pcie\pcie_controller_syn_resource.html
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\serdes\pcie_controller\temp\pcie\pcie_controller_syn_rsc.xml
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\serdes\pcie_controller\temp\pcie\pcie_controller_tmp.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\serdes\pcie_controller\temp\pcie\project.ini
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\serdes\serdes.csr
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\serdes\serdes.ipc
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\serdes\serdes.mod
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\serdes\serdes.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\serdes\serdes_tmp.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\spi_lcd_controller.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\spi_lcd_init.v
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\spi_master.v
+
+********* Total 45 files to archive *********
+

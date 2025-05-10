@@ -50,7 +50,7 @@ https://github.com/adam-maj/tiny-gpu
 ## Demo Results
 - Ran character recognition code on the Raspberry Pi 5.
 - Data is transferred to the GPU via PCIe, and DL operations are executed.
-- Character image recognition result <br>
+- Character image recognition result when running EduGPU_mnist.py <br>
 
 ![Character image recognition result](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/GPU_demo.jpg?raw=true)
 

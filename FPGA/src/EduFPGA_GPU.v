@@ -14,7 +14,7 @@ module EduFPGA_GPU #(
     )(
 	clk,
 	reset,
-    soft_reset,
+    	soft_reset,
 	start,
 	done,
 	device_control_write_enable,
@@ -36,7 +36,7 @@ module EduFPGA_GPU #(
 );
 	input wire clk;
 	input wire reset;
-    input wire soft_reset;
+    	input wire soft_reset;
 	input wire start;
 	output wire done;
 	input wire device_control_write_enable;

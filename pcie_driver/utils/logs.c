@@ -1,5 +1,5 @@
 /*
-EduGraphics_pcie_driver
+EduGPU_pcie_driver
 */
 
 #include "logs.h"

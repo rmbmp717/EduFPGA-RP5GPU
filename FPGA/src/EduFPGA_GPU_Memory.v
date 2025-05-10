@@ -1,8 +1,8 @@
 /*
-EduGraphics FPGA
+EduFPGA GPU
 NISHIHARU
 */
-module EduGraphics_GPU_Memory  #(
+module EduFPGA_GPU_Memory  #(
     parameter PROGRAM_DATA_NUM   = 64,
     parameter DAMAMEM_DATA_WIDTH = 32,
     parameter DAMAMEM_ADDR_WIDTH = 16,

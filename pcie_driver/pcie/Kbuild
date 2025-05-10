@@ -5,26 +5,26 @@ VDMA_SRC_DIRECTORY=../vdma
 UTILS_SRC_DIRECTORY=../utils
 BASE_INCLUDE_DIRECTORY=..
 
-obj-m := EduGraphics_pcie_driver.o
+obj-m := EduGPU_pcie_driver.o
 
-EduGraphics_pcie_driver-objs += src/pcie.o
-EduGraphics_pcie_driver-objs += src/fops.o
-EduGraphics_pcie_driver-objs += src/sysfs.o
+EduGPU_pcie_driver-objs += src/pcie.o
+EduGPU_pcie_driver-objs += src/fops.o
+EduGPU_pcie_driver-objs += src/sysfs.o
 
-EduGraphics_pcie_driver-objs += $(COMMON_SRC_DIRECTORY)/pcie_common.o
-EduGraphics_pcie_driver-objs += $(COMMON_SRC_DIRECTORY)/edugra_resource.o
-EduGraphics_pcie_driver-objs += $(COMMON_SRC_DIRECTORY)/vdma_common.o
+EduGPU_pcie_driver-objs += $(COMMON_SRC_DIRECTORY)/pcie_common.o
+EduGPU_pcie_driver-objs += $(COMMON_SRC_DIRECTORY)/edugpu_resource.o
+EduGPU_pcie_driver-objs += $(COMMON_SRC_DIRECTORY)/vdma_common.o
 
-EduGraphics_pcie_driver-objs += $(UTILS_SRC_DIRECTORY)/logs.o
+EduGPU_pcie_driver-objs += $(UTILS_SRC_DIRECTORY)/logs.o
 
-EduGraphics_pcie_driver-objs += $(VDMA_SRC_DIRECTORY)/vdma.o
+EduGPU_pcie_driver-objs += $(VDMA_SRC_DIRECTORY)/vdma.o
 
 ccflags-y      += -Werror
 ccflags-y      += -I$(src)/include
 ccflags-y      += -I$(src)/$(COMMON_SRC_DIRECTORY)
 ccflags-y      += -I$(src)/$(BASE_INCLUDE_DIRECTORY)
 
-clean-files := $(EduGraphics_pcie_driver-objs)
+clean-files := $(EduGPU_pcie_driver-objs)
 
 UNAME_STR=$(shell uname -a)
 

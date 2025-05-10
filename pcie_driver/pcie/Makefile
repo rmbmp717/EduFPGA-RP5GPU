@@ -29,8 +29,8 @@ endif
 # Default is release folder
 TARGET_DIR:="$(BUILD_DIR)/release/$(ARCH)"
 
-DRIVER_NAME=EduGraphics_pcie_driver.ko
-DRIVER_NAME_NO_EXT=EduGraphics_pcie_driver
+DRIVER_NAME=EduGPU_pcie_driver.ko
+DRIVER_NAME_NO_EXT=EduGPU_pcie_driver
 
 #VERSION_MAJOR=$(shell grep "\#define HAILO_DRV_VER_MAJOR" ../../common/hailo_ioctl_common.h | sed "s/\#define HAILO_DRV_VER_MAJOR //g")
 #VERSION_MINOR=$(shell grep "\#define HAILO_DRV_VER_MINOR" ../../common/hailo_ioctl_common.h | sed "s/\#define HAILO_DRV_VER_MINOR //g")
@@ -156,4 +156,4 @@ endif
 .PHONY: uninstall
 
 #sudo dkms status
-#sudo dkms remove EduGraphics_pcie_driver/0.8.0 --all
+#sudo dkms remove EduGPU_pcie_driver/0.8.0 --all

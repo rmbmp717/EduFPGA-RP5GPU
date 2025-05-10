@@ -1,11 +1,11 @@
 /*
-EduGraphics FPGA TOP file
+EduGPU FPGA TOP file
 NISHIHARU
 Default option
 -top work.PMOD_LCD_top_dsimtest -L dut +acc+b -waves wave.vcd
 */
 `timescale 1ns / 1ns
-module EduGraphics_GPU_FPGA_top_dsimtest ();
+module EduGPU_FPGA_top_dsimtest ();
 
 `define RTLSIM
 

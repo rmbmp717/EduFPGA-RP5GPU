@@ -1,0 +1,6 @@
+ADD R5, R2, R0          : test
+SUB R1, R3, R4
+MUL R7, R5, R1
+DIV R2, R6, R0
+BRNZP 0x12
+CONST R0, 0x1F

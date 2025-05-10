@@ -1,0 +1,81 @@
+命令セット
+
+NOP         PC = PC + 1
+BRnzp       NZP? PC = IMM8
+CMP         NZP = sign(Rs-Rt)
+ADD         Rd = Rs + Rt
+SUB         Rd = Rs - Rt
+MUL         Rd = Rs * Rt
+DIV         Rd = Rs / Rt
+LDR         Rd = global_data_mem[Rs]
+STR         global_data_mem[Rs] = Rt
+CONST       Rd = IMM8
+RET         done
+
+各命令の機械語
+NOP     :0000
+BRnzP   :0001
+CMP     :0010
+ADD     :0011
+SUB     :0100
+MUL     :0101
+DIV     :0110
+LDR     :0111
+STR     :1000
+CONST   :1001
+RET     :1111
+
+BRpの場合はCMP命令は    : 0001 0010 IMM8
+BRzの場合はCMP命令は    : 0001 0100 IMM8
+BRnの場合はCMP命令は    : 0001 1000 IMM8
+
+
+ADD R5, R2, R0 を機械語に変換すると
+0011_0101_0010_0000
+
+レジスタは16個
+R0〜R15
+使用可能はR0〜R12
+
+メモリ仕様
+プログラムメモリ、データメモリは別個
+
+変換例
+
+    program = [
+        0b0101000011011110, # MUL R0, %blockIdx, %blockDim
+        0b0011000000001111, # ADD R0, R0, %threadIdx         ; i = blockIdx * blockDim + threadIdx
+        0b1001000100000001, # CONST R1, #1                   ; increment
+        0b1001001000000010, # CONST R2, #2                   ; N (matrix inner dimension)
+        0b1001001100000000, # CONST R3, #0                   ; baseA (matrix A base address)
+        0b1001010000000100, # CONST R4, #4                   ; baseB (matrix B base address)
+        0b1001010100001000, # CONST R5, #8                   ; baseC (matrix C base address)
+        0b0110011000000010, # DIV R6, R0, R2                 ; row = i // N
+        0b0101011101100010, # MUL R7, R6, R2
+        0b0100011100000111, # SUB R7, R0, R7                 ; col = i % N
+        0b1001100000000000, # CONST R8, #0                   ; acc = 0
+        0b1001100100000000, # CONST R9, #0                   ; k = 0
+                            # LOOP:
+        0b0101101001100010, #   MUL R10, R6, R2
+        0b0011101010101001, #   ADD R10, R10, R9
+        0b0011101010100011, #   ADD R10, R10, R3             ; addr(A[i]) = row * N + k + baseA
+        0b0111101010100000, #   LDR R10, R10                 ; load A[i] from global memory
+        0b0101101110010010, #   MUL R11, R9, R2
+        0b0011101110110111, #   ADD R11, R11, R7
+        0b0011101110110100, #   ADD R11, R11, R4             ; addr(B[i]) = k * N + col + baseB
+        0b0111101110110000, #   LDR R11, R11                 ; load B[i] from global memory
+        0b0101110010101011, #   MUL R12, R10, R11
+        0b0011100010001100, #   ADD R8, R8, R12              ; acc = acc + A[i] * B[i]
+        0b0011100110010001, #   ADD R9, R9, R1               ; increment k
+        0b0010000010010010, #   CMP R9, R2
+        0b0001100000001100, #   BRn LOOP                     ; loop while k < N
+        0b0011100101010000, # ADD R9, R5, R0                 ; addr(C[i]) = baseC + i 
+        0b1000000010011000, # STR R9, R8                     ; store C[i] in global memory
+        0b1111000000000000  # RET                            ; end of kernel
+    ]
+
+################################################
+以上
+
+この仕様で
+アセンブラを機械語に変換するPythonを書いて

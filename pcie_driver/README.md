@@ -15,6 +15,7 @@
 
 ### Command-line Input
 ```bash
+$ cd ./pcie
 $ make all
 $ sudo make install_dkms
 $ sudo modprobe EduGPU_pcie_driver

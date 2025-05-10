@@ -1,0 +1,37 @@
+# SPDX-License-Identifier: GPL-2.0
+
+COMMON_SRC_DIRECTORY=../../common
+VDMA_SRC_DIRECTORY=../vdma
+UTILS_SRC_DIRECTORY=../utils
+BASE_INCLUDE_DIRECTORY=..
+
+obj-m := EduGraphics_pcie_driver.o
+
+EduGraphics_pcie_driver-objs += src/pcie.o
+EduGraphics_pcie_driver-objs += src/fops.o
+EduGraphics_pcie_driver-objs += src/sysfs.o
+
+EduGraphics_pcie_driver-objs += $(COMMON_SRC_DIRECTORY)/pcie_common.o
+EduGraphics_pcie_driver-objs += $(COMMON_SRC_DIRECTORY)/edugra_resource.o
+EduGraphics_pcie_driver-objs += $(COMMON_SRC_DIRECTORY)/vdma_common.o
+
+EduGraphics_pcie_driver-objs += $(UTILS_SRC_DIRECTORY)/logs.o
+
+EduGraphics_pcie_driver-objs += $(VDMA_SRC_DIRECTORY)/vdma.o
+
+ccflags-y      += -Werror
+ccflags-y      += -I$(src)/include
+ccflags-y      += -I$(src)/$(COMMON_SRC_DIRECTORY)
+ccflags-y      += -I$(src)/$(BASE_INCLUDE_DIRECTORY)
+
+clean-files := $(EduGraphics_pcie_driver-objs)
+
+UNAME_STR=$(shell uname -a)
+
+ifneq (,$(findstring raspi, $(UNAME_STR)))
+    ccflags-y      += -DHAILO_RASBERRY_PIE
+endif
+
+ifeq ($(EMULATOR), 1)
+    ccflags-y      += -DHAILO_EMULATOR
+endif

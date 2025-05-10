@@ -1,0 +1,3 @@
+#Change mode rules for Edugra's PCIe driver
+#copy /etc/udev/rules.d/
+SUBSYSTEM=="EduGraphics_chardev", MODE="0666"

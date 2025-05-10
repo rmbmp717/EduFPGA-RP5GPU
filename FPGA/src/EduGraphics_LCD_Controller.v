@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module EduGraphics_LCD_Controller (
+module EduFPGA_LCD_Controller (
     input wire clk_10MHz,            // システムクロック (10MHz)
     input wire rst_n,                // アクティブローリセット
     input wire sw_rstn,              // スイッチリセット信号（例）

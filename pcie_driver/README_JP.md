@@ -13,7 +13,7 @@
 ## 使用法
 
 
-### Command-line Output
+### Command-line Input
 ```bash
 $make all
 $sudo make install_dkms

@@ -50,7 +50,7 @@ https://github.com/adam-maj/tiny-gpu
 ## デモ動作結果
 - ラズパイ5上で文字認識コードを実行しました。
 - GPUにPCIE経由でデータを転送しDLの演算を実行させています。
-- 文字画像認識結果 <br>
+- EduGPU_mnist.pyを実行した場合の文字画像認識結果 <br>
 
 ![文字画像認識結果](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/GPU_demo.jpg?raw=true)
 

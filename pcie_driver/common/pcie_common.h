@@ -38,4 +38,13 @@ struct edugra_pcie_resources {
 
 void edugra_pcie_update_channel_interrupts_mask(struct edugra_pcie_resources *resources, u32 channels_bitmap);
 
+u32 edugra_resource_read32(struct edugra_resource *resource, size_t offset);
+
+void edugra_resource_write32(struct edugra_resource *resource, size_t offset, u32 value);
+
+u64 edugra_pcie_encode_desc_dma_address_range(dma_addr_t dma_address_start,
+                                              dma_addr_t dma_address_end,
+                                              u32 step,
+                                              u8 channel_id);
+
 #endif /* _EDUGRA_COMMON_PCIE_COMMON_H_ */

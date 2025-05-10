@@ -10,4 +10,7 @@ struct edugra_resource {
     size_t      size;
 };
 
+/* 関数プロトタイプを追記 */
+u8 edugra_resource_read8(struct edugra_resource *resource, size_t offset);
+
 #endif /* _EDUGRA_COMMON_EDUGRA_RESOURCE_H_ */

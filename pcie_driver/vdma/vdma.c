@@ -1,9 +1,9 @@
 
 /*
-EduGraphics_pcie_driver
+EduGPU_pcie_driver
 */
 
-#define pr_fmt(fmt) "edugra: " fmt
+#define pr_fmt(fmt) "edugpu: " fmt
 
 #include "vdma.h"
 //#include "memory.h"
@@ -20,10 +20,10 @@ EduGraphics_pcie_driver
 #endif
 
 
-static struct edugra_vdma_engine* init_vdma_engines(struct device *dev,
-    struct edugra_resource *channel_registers_per_engine, size_t engines_count, u32 src_channels_bitmask)
+static struct edugpu_vdma_engine* init_vdma_engines(struct device *dev,
+    struct edugpu_resource *channel_registers_per_engine, size_t engines_count, u32 src_channels_bitmask)
 {
-    struct edugra_vdma_engine *engines = NULL;
+    struct edugpu_vdma_engine *engines = NULL;
     u8 i = 0;
 
     engines = devm_kmalloc_array(dev, engines_count, sizeof(*engines), GFP_KERNEL);
@@ -33,17 +33,17 @@ static struct edugra_vdma_engine* init_vdma_engines(struct device *dev,
     }
 
     for (i = 0; i < engines_count; i++) {
-        edugra_vdma_engine_init(&engines[i], i, &channel_registers_per_engine[i], src_channels_bitmask);
+        edugpu_vdma_engine_init(&engines[i], i, &channel_registers_per_engine[i], src_channels_bitmask);
     }
 
     return engines;
 }
 
 
-int edugra_vdma_controller_init(struct edugra_vdma_controller *controller,
-    struct device *dev, struct edugra_vdma_hw *vdma_hw,
-    struct edugra_vdma_controller_ops *ops,
-    struct edugra_resource *channel_registers_per_engine, size_t engines_count)
+int edugpu_vdma_controller_init(struct edugpu_vdma_controller *controller,
+    struct device *dev, struct edugpu_vdma_hw *vdma_hw,
+    struct edugpu_vdma_controller_ops *ops,
+    struct edugpu_resource *channel_registers_per_engine, size_t engines_count)
 {
     int err = 0;
     controller->hw = vdma_hw;
@@ -63,13 +63,13 @@ int edugra_vdma_controller_init(struct edugra_vdma_controller *controller,
     init_waitqueue_head(&controller->interrupts_wq);
 
     /* Check and configure DMA length */
-    //err = edugra_set_dma_mask(dev);
+    //err = edugpu_set_dma_mask(dev);
     if (0 > err) {
         return err;
     }
 
     if (get_dma_ops(controller->dev)) {
-        edugra_dev_notice(controller->dev, "Probing: Using specialized dma_ops=%ps", get_dma_ops(controller->dev));
+        edugpu_dev_notice(controller->dev, "Probing: Using specialized dma_ops=%ps", get_dma_ops(controller->dev));
     }
 
     return 0;

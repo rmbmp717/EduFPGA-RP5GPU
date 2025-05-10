@@ -110,7 +110,7 @@ module EduFPGA_GPU_module  #(
 `ifdef GPU_LESS
 `else
     // EduGrapchics GPU
-    EduGraphics_GPU  #(
+    EduFPGA_GPU  #(
         .DATA_MEM_ADDR_BITS             (GPU_ADDR_WIDTH),
         .DATA_MEM_DATA_BITS             (GPU_DATA_MEM_DATA_BITS),
         .DATA_MEM_NUM_CHANNELS          (GPU_DATA_MEM_NUM_CHANNELS),
@@ -147,7 +147,7 @@ module EduFPGA_GPU_module  #(
     //##########################################################################################
     //EduGraGPU Memory
     // Memory
-    EduGraphics_GPU_Memory #(
+    EduFPGA_GPU_Memory #(
         .PROGRAM_DATA_NUM                   (64),
         .DAMAMEM_DATA_WIDTH                 (MEMORY_DATA_MEM_DATA_BITS),
         .DAMAMEM_ADDR_WIDTH                 (MEMORY_ADDR_WIDTH),

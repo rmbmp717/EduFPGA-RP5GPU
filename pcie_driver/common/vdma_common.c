@@ -1,5 +1,5 @@
 /*
-EduGraphics_pcie_driver
+EduGPU_pcie_driver
 */
 
 #include "vdma_common.h"
@@ -30,16 +30,16 @@ static u8 __iomem *get_channel_regs(u8 __iomem *regs_base, u8 channel_index, boo
     // Check if getting host side regs or device side
     u8 __iomem *channel_regs_base = regs_base + CHANNEL_BASE_OFFSET(channel_index);
     if (is_host_side) {
-        return edugra_test_bit(channel_index, &src_channels_bitmask) ? channel_regs_base :
+        return edugpu_test_bit(channel_index, &src_channels_bitmask) ? channel_regs_base :
             (channel_regs_base + CHANNEL_DEST_REGS_OFFSET);
     } else {
-        return edugra_test_bit(channel_index, &src_channels_bitmask) ? (channel_regs_base + CHANNEL_DEST_REGS_OFFSET) :
+        return edugpu_test_bit(channel_index, &src_channels_bitmask) ? (channel_regs_base + CHANNEL_DEST_REGS_OFFSET) :
             channel_regs_base;
     }
 }
 
 
-static void channel_state_init(struct edugra_vdma_channel_state *state)
+static void channel_state_init(struct edugpu_vdma_channel_state *state)
 {
     state->num_avail = state->num_proc = 0;
 
@@ -48,11 +48,11 @@ static void channel_state_init(struct edugra_vdma_channel_state *state)
 }
 
 
-void edugra_vdma_engine_init(struct edugra_vdma_engine *engine, u8 engine_index,
-    const struct edugra_resource *channel_registers, u32 src_channels_bitmask)
+void edugpu_vdma_engine_init(struct edugpu_vdma_engine *engine, u8 engine_index,
+    const struct edugpu_resource *channel_registers, u32 src_channels_bitmask)
 {
     u8 channel_index = 0;
-    struct edugra_vdma_channel *channel;
+    struct edugpu_vdma_channel *channel;
 
     engine->index = engine_index;
     engine->enabled_channels = 0x0;

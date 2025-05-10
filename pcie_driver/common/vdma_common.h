@@ -1,13 +1,13 @@
 /*
-EduGraphics_pcie_driver
+EduGPU_pcie_driver
 */
 
-#ifndef _EDUGRA_COMMON_VDMA_COMMON_H_
-#define _EDUGRA_COMMON_VDMA_COMMON_H_
+#ifndef _EDUGPU_COMMON_VDMA_COMMON_H_
+#define _EDUGPU_COMMON_VDMA_COMMON_H_
 
-#include "edugra_resource.h"
+#include "edugpu_resource.h"
 #include "utils.h"
-#include "edugra_ioctl_common.h"
+#include "edugpu_ioctl_common.h"
 
 #include <linux/types.h>
 #include <linux/scatterlist.h>
@@ -16,7 +16,7 @@ EduGraphics_pcie_driver
 #define MAX_DIRTY_DESCRIPTORS_PER_TRANSFER      \
     (HAILO_MAX_BUFFERS_PER_SINGLE_TRANSFER + 1)
 
-struct edugra_ongoing_transfer {
+struct edugpu_ongoing_transfer {
     uint16_t last_desc;
 
     u8 buffers_count;
@@ -33,14 +33,14 @@ struct edugra_ongoing_transfer {
 };
 
 
-struct edugra_ongoing_transfers_list {
+struct edugpu_ongoing_transfers_list {
     unsigned long head;
     unsigned long tail;
-    struct edugra_ongoing_transfer transfers[HAILO_VDMA_MAX_ONGOING_TRANSFERS];
+    struct edugpu_ongoing_transfer transfers[HAILO_VDMA_MAX_ONGOING_TRANSFERS];
 };
 
 
-struct edugra_vdma_hw_ops {
+struct edugpu_vdma_hw_ops {
     // Accepts start, end and step of an address range (of type  dma_addr_t).
     // Returns the encoded base address or INVALID_VDMA_ADDRESS if the range/step is invalid.
     // All addresses in the range of [returned_addr, returned_addr + step, returned_addr + 2*step, ..., dma_address_end) are valid.
@@ -48,8 +48,8 @@ struct edugra_vdma_hw_ops {
 };
 
 
-struct edugra_vdma_hw {
-    struct edugra_vdma_hw_ops hw_ops;
+struct edugpu_vdma_hw {
+    struct edugpu_vdma_hw_ops hw_ops;
 
     // The data_id code of ddr addresses.
     u8 ddr_data_id;
@@ -63,7 +63,7 @@ struct edugra_vdma_hw {
 };
 
 
-struct edugra_vdma_channel_state {
+struct edugpu_vdma_channel_state {
     // vdma channel counters. num_avail should be synchronized with the hw
     // num_avail value. num_proc is the last num proc updated when the user
     // reads interrupts.
@@ -75,14 +75,14 @@ struct edugra_vdma_channel_state {
 };
 
 
-struct edugra_channel_interrupt_timestamp_list {
+struct edugpu_channel_interrupt_timestamp_list {
     int head;
     int tail;
-    struct edugra_channel_interrupt_timestamp timestamps[CHANNEL_IRQ_TIMESTAMPS_SIZE];
+    struct edugpu_channel_interrupt_timestamp timestamps[CHANNEL_IRQ_TIMESTAMPS_SIZE];
 };
 
 
-struct edugra_vdma_channel {
+struct edugpu_vdma_channel {
     u8 index;
 
     u8 __iomem *host_regs;
@@ -90,13 +90,13 @@ struct edugra_vdma_channel {
 
     // Last descriptors list attached to the channel. When it changes,
     // assumes that the channel got reset.
-    struct edugra_vdma_descriptors_list *last_desc_list;
+    struct edugpu_vdma_descriptors_list *last_desc_list;
 
-    struct edugra_vdma_channel_state state;
-    struct edugra_ongoing_transfers_list ongoing_transfers;
+    struct edugpu_vdma_channel_state state;
+    struct edugpu_ongoing_transfers_list ongoing_transfers;
 
     bool timestamp_measure_enabled;
-    struct edugra_channel_interrupt_timestamp_list timestamp_list;
+    struct edugpu_channel_interrupt_timestamp_list timestamp_list;
 };
 
 #define _for_each_element_array(array, size, element, index) \
@@ -108,15 +108,15 @@ struct edugra_vdma_channel {
         channel, channel_index)
 
 
-struct edugra_vdma_engine {
+struct edugpu_vdma_engine {
     u8 index;
     u32 enabled_channels;
     u32 interrupted_channels;
-    struct edugra_vdma_channel channels[MAX_VDMA_CHANNELS_PER_ENGINE];
+    struct edugpu_vdma_channel channels[MAX_VDMA_CHANNELS_PER_ENGINE];
 };
 
-void edugra_vdma_engine_init(struct edugra_vdma_engine *engine, u8 engine_index,
-    const struct edugra_resource *channel_registers, u32 src_channels_bitmask);
+void edugpu_vdma_engine_init(struct edugpu_vdma_engine *engine, u8 engine_index,
+    const struct edugpu_resource *channel_registers, u32 src_channels_bitmask);
 
 
-#endif /* _EDUGRA_COMMON_VDMA_COMMON_H_ */
+#endif /* _EDUGPU_COMMON_VDMA_COMMON_H_ */

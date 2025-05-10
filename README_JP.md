@@ -16,7 +16,7 @@ PCIEドライバーを通してラズベリーパイ5と通信可能です。
 ![デモ動作環境](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/RP5_GPU.jpg?raw=true)
 
 - ASM1182e PCIEレピーター基板 <br>
-![PCIEレピーター基板](htps://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/RP5_GPU_ASM1182e.jpg?raw=true)
+![PCIEレピーター基板](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/RP5_GPU_ASM1182e.jpg?raw=true)
 
 ## GPU
 - この方のtiny-gpuを参考に設計しています。

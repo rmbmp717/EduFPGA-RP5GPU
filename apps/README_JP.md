@@ -12,11 +12,15 @@
 ## DEMOスクリプトの実行方法
 
 # ニューロンの重みデータの作成
-- EduGPU_mnist.py
+- EduGPU_mnist.py で下記のように設定
   
 ```python
 PREDICT_MODE = 0  # 0: 学習, 1: 予測
 GPU_USE_MODE = 1  # 1: dont use GPU, 1 : GPU use
+
+```
+```bash
+$ python EduGPU_mnist.py
 
 ```
 

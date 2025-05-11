@@ -19,6 +19,8 @@ PREDICT_MODE = 0  # 0: 学習, 1: 予測
 GPU_USE_MODE = 1  # 1: dont use GPU, 1 : GPU use
 
 ```
+
+- スクリプトの実行
 ```bash
 $ python EduGPU_mnist.py
 

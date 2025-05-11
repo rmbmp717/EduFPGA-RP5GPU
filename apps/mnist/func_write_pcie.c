@@ -4,7 +4,7 @@
 #include <string.h>
 #include <errno.h>
 
-#define DEVICE "/dev/EduGraphics_pcie_driver0"
+#define DEVICE "/dev/EduGPU_pcie_driver0"
 #define FPGA "FPGA"
 
 int write_to_device(unsigned int data, off_t offset) {

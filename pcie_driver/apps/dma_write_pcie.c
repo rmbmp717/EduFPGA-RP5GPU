@@ -9,7 +9,7 @@
 #include <errno.h>
 #include <time.h>
 
-#define DEVICE_FILE "/dev/EduGraphics_pcie_driver0"  // デバイスファイルのパス
+#define DEVICE_FILE "/dev/EduGPU_pcie_driver0"  // デバイスファイルのパス
 
 // ioctlコマンドの定義（ドライバと一致させる）
 #define EDU_DMA_START       _IO('E', 1)

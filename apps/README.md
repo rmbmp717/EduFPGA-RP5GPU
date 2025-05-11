@@ -16,7 +16,7 @@
 
 ```python
 PREDICT_MODE = 0  # 0: training, 1: inference
-GPU_USE_MODE = 1  # 1: don't use GPU, 1: use GPU
+GPU_USE_MODE = 0  # 0: don't use GPU, 1: use GPU
 
 ```
 
@@ -33,6 +33,13 @@ $ python EduGPU_Assembler.py assm5.asm
 ```
 
 # Running the DEMO script
+- Set the following in `EduGPU_mnist.py`:
+
+```python
+PREDICT_MODE = 1  # 0: training, 1: inference
+GPU_USE_MODE = 1  # 0: don't use GPU, 1: use GPU
+
+```
 
 ```bash
 $ cd ..

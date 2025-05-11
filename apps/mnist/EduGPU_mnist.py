@@ -16,7 +16,7 @@ import fp16_lib
 TRAINING_DTYPE = np.float32
 PREDICTION_DTYPE = np.float16
 PREDICT_MODE = 1  # 0: 学習, 1: 予測
-GPU_USE_MODE = 1  # 1: dont use GPU, 1 : GPU use
+GPU_USE_MODE = 1  # 0: dont use GPU, 1 : GPU use
 
 import GPU_asm5_set
 

@@ -11,7 +11,7 @@
 | utils       | PCIE driver utility files                   |
 | vdma        | PCIE driver VDMA files (under development)  |
 
-## Usage
+## Install
 
 ### Command-line Input
 ```bash
@@ -21,7 +21,9 @@ $ sudo make install_dkms
 $ sudo modprobe EduGPU_pcie_driver
 ```
 
-### Using the apps folder
+## Usage of apps folder
+
+### Command-line Input
 ```bash
 $ ./reg_set 01
 0x00000001: Program Write

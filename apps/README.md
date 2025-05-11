@@ -41,7 +41,7 @@ GPU_USE_MODE = 1  # 0: don't use GPU, 1: use GPU
 
 ```
 
+- Run the script:
 ```bash
-$ cd ..
 $ python EduGPU_mnist.py
 ```

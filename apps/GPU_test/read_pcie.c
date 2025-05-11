@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-#define DEVICE "/dev/EduGraphics_pcie_driver0"
+#define DEVICE "/dev/EduGPU_pcie_driver0"
 #define BUFFER_SIZE 4
 
 int main(int argc, char *argv[]) {

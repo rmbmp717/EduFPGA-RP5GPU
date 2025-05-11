@@ -1,5 +1,5 @@
 
-# Contents: Scripts to Operate the GPU
+# Contents: DEMO Scripts to Operate the GPU
 
 ## Folder Structure
 

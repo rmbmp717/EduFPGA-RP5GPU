@@ -44,8 +44,8 @@ GPU_USE_MODE = 1  # 0: dont use GPU, 1 : GPU use
 
 ```
 
+- EduGPU_mnist.pyの実行
 ```bash
-$ cd ..
 $ python EduGPU_mnist.py
 
 ```

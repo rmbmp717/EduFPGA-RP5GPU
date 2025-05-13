@@ -2,6 +2,7 @@
 
 ## 概要
 - Sipeed Tang Mega 138k用の設計データです。
+- tang console 138k 向けにデザインを変更する予定です。
 
 ## フォルダ構成
 

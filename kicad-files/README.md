@@ -5,3 +5,7 @@
 - (There are wiring correction points) <br>
 
 ![Demo board](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/FPGA_board.jpg?raw=true)
+
+- Compatible with the Tang 138K SOM board. <br>
+
+![Demo board](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/SOM_omote.jpg?raw=true)

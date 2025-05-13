@@ -65,6 +65,7 @@ https://github.com/adam-maj/tiny-gpu
 
 ## デモボード
 - tang consoleが発売されたので、今後の使用予定は無くなったのですが、FPGAサブ基板を搭載可能な基板を設計しました。
+- tang 138k SOMボードに対応しています。
 - kiCADで設計しています。
 - （配線要修正箇所があります）
 

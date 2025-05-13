@@ -8,8 +8,8 @@
 
 - Compatible with the Tang 138K SOM board. <br>
 
-![Demo board](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/SOM_omote.jpg?raw=true)
+![SOM board](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/SOM_omote.jpg?raw=true)
 
 - SOM Back side. <br>
 
-![Demo board](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/SOM_ura.jpg?raw=true)
+![SOM board](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/SOM_ura.jpg?raw=true)

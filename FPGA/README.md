@@ -3,6 +3,7 @@
 
 ## Overview
 - Design data for the Sipeed Tang Mega 138k.
+- We plan to modify the design for the Tang Console 138K.
 
 ## Folder Structure
 

@@ -1,4 +1,4 @@
-********* Archive Project on 2025-05-10 23:37:11 *********
+********* Archive Project on 2025-06-10 08:30:16 *********
 Tool Version: V1.9.9 (64-bit)
 Archive file: C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\EduFPGA-RP5GPU.gar
 Archive files successfully
@@ -8,12 +8,13 @@ Archive files successfully
 C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\EduFPGA-RP5GPU.gprj
 C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\EduFPGA-RP5GPU.gprj.user
 C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\impl\EduFPGA-RP5GPU_process_config.json
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\EduFPGA_138k_project.cst
 C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\EduFPGA_GPU.v
 C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\EduFPGA_GPU_Memory.v
 C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\EduFPGA_GPU_module.v
 C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\EduFPGA_LCD_Controller.v
 C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\EduFPGA_RP5GPU.sdc
-C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\EduFPGA_project.cst
+C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\EduFPGA_console_project.cst
 C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\EduFPGA_top.v
 C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\VIDEO_RAM.mi
 C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\gowin_pll\gowin_pll.ipc
@@ -51,5 +52,5 @@ C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\spi_lcd_controlle
 C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\spi_lcd_init.v
 C:\Gowin\Gowin_V1.9.9_x64\IDE\bin\Documents\EduFPGA-RP5GPU\src\spi_master.v
 
-********* Total 45 files to archive *********
+********* Total 46 files to archive *********
 

@@ -13,7 +13,7 @@ PCIEドライバーを通してラズベリーパイ5と通信可能です。
 - デモ動作環境
 - raspberry pi 5 + Tang Mega 138K + PCIE変換基板 + ASM1182e PCIEレピーター基板 <br>
 
-![デモ動作環境](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/RP5_GPU_ASM1182e.jpg?raw=true)
+![デモ動作環境](https://github.com/rmbmp717/EduFPGA-RP5GPU/blob/main/image/RP5_console_GPU.jpg?raw=true)
 
 - ASM1182e PCIEレピーター基板
 - ASM1182e PCIEレピーター基板を使用しないとGowin FPGAのPCIE IPがRP5起動時に認識しません。<br>
